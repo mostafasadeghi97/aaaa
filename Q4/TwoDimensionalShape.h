@@ -15,7 +15,8 @@
 class TwoDimensionalShape : public Shape
 {
 	
-// public: 
+public: 
+virtual void print(){};
 // 	TwoiDImensionalShape() = default;
 
 	

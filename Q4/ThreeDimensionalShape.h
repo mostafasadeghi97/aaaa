@@ -14,8 +14,12 @@
 
 class ThreeDimensionalShape : public Shape
 {
+
+
+
 	
-// public: 
+public: 
+virtual void print(){};
 // 	ThreeDimensionalShape() = default;
 
 	

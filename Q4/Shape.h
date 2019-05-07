@@ -16,9 +16,18 @@
 class Shape 
 {
 	
-// public: 
-// 	Shape() = default;
-}; 
+public: 
+    virtual double area(){return 0;}
+    virtual double volume(){return 0;}
+    // virtual void print(){std::cout <<"";};
+    // friend std::ostream& operator << (std::ostream& out, const Parent& instance);
+    virtual std::ostream&  print(std::ostream& out) {
+        return out;
+    }
+    friend std::ostream& operator << (std::ostream& out,Shape& instance);
 
+// 	Shape() = default;
+
+}; 
 
 #endif
