@@ -72,7 +72,25 @@ bool solveMazeUtil(int** maze, int x, int y, int** sol,int N, int M)
 		/* If moving in x direction doesn't give solution then 
 		Move down in y direction */
 		if (solveMazeUtil(maze, x, y + 1, sol, N, M) == true) 
+			return true;
+
+		if (solveMazeUtil(maze, x -1, y, sol, N, M) == true) 
 			return true; 
+
+		if (solveMazeUtil(maze, x, y - 1, sol, N, M) == true) 
+			return true;
+
+		if (solveMazeUtil(maze, x+1, y + 1, sol, N, M) == true) 
+			return true;
+
+		if (solveMazeUtil(maze, x-1, y - 1, sol, N, M) == true) 
+			return true;
+
+		if (solveMazeUtil(maze, x+1, y - 1, sol, N, M) == true) 
+			return true;
+
+		if (solveMazeUtil(maze, x - 1, y + 1, sol, N, M) == true) 
+			return true;
 
 		/* If none of the above movements work then BACKTRACK: 
 			unmark x, y as part of solution path */
@@ -103,23 +121,14 @@ int main()
 	for (int x = 0; x < N; x++)
 	{	
 		std::string a{};
-		std::getline(std::cin,a);
-		std::cout << a;
+		std::cin >> a;
 		for(size_t y = 0; y < a.size(); ++y) {
-			std::cout << a[y];
-			maze[x][y] = a[y];
+			std::string aa{a[y]};
+			maze[x][y] = std::stoi(aa);
 			
 		}
 		
 	}
-	
-
-
-
-	
-	
-	
-
 	solveMaze(maze, N, M); 
 	return 0; 
 } 
