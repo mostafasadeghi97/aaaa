@@ -66,13 +66,18 @@ bool isReachable(int** maze)
 
 		// If we reach the Food coordinates 
 		// return true 
-		if (i == fx and j == fy) { 
+		if (i == fx and j == fy) {
+            while (!s.empty()) { 
+
+                cout << s.top().x  << " , " << s.top().y << endl; 
+                s.pop(); 
+            }
 			return true; 
 		} 
 
 		// Checking the Up direction. 
 		if (d == 0) { 
-			if (i - 1 >= 0 and maze[i - 1][j] and 
+			if (i - 1 >= 0 and maze[i - 1][j] and
 									visited[i - 1][j]) { 
 				node temp1(i - 1, j); 
 				visited[i - 1][j] = false; 
